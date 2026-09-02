@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #login{
+            color: #ccc;
+            background-color: black;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 100px;
+            height: 50px;
+        }
+
+        .loginModel{
+            width: 400px;
+            height: 100vh;
+            position: fixed;
+            top: 0px;
+            transition: 0.5s;
+            right: -500px;
+            padding: 40px;
+            background-color: black;
+            color: white;
+        }
+
+        .loginModel span img{
+            cursor: pointer;
+            width: 30px;
+            height:30px;
+            
+        }
+
+        #main{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+
+        }
+        #main h3{
+            font-size: 20px;
+        }
+
+        .loginModel form{
+            margin-top: 40px;
+        }
+        .loginModel form label{
+            display: block;
+        }
+        .loginModel form input{
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .loginModel form button{
+            width: 100%;
+            padding: 10px 0px;
+            margin-top: 40px;
+            color: white;
+            background-color: rgb(4, 4, 201);
+            font-size: 20px;
+            border-radius: 6px;
+        }
+
+        .loginModel form p{
+            margin-top: 100px;
+
+        }
+
+        .showModel{
+            right: 0px;
+        }
+
+    </style>
+    <title>Login Model</title>
+</head>
+<body>
+
+        <button id="login">Login</button>
+
+    
+    <div class="loginModel" >
+        <span><img src="close.png" alt=""></span>
+        <div id="main">
+            <h3>Login</h3>
+            <p>Use email, instead</p>
+        </div>
+        <form action="">
+            <label for="">Mobile Number </label>
+            <input type="text">
+            <button>Login</button>
+            <p>Don't have an account? <a href=""> Create an account</a></p>
+        </form>
+        
+    </div>
+
+    <script>
+        let loginBtn = document.querySelector("#login");
+        
+        let loginElement = document.querySelector(".loginModel");
+
+        let closeBtn = document.querySelector(".loginModel span img")
+
+        loginBtn.addEventListener("click", () => {
+            loginElement.classList.add('showModel')
+        })
+
+        closeBtn.addEventListener("click", () =>{
+            loginElement.classList.remove('showModel');
+        })
+    </script>
+    
+</body>
+</html>
